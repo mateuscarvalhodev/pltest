@@ -16,7 +16,7 @@ type Props = {
   }[];
 };
 
-export const EnergyGraphic = ({ data }: Props) => {
+export const EnergyChart = ({ data }: Props) => {
   return (
     <div style={{ marginTop: 32 }}>
       <h2>Resultados de Energia (kWh)</h2>
@@ -34,4 +34,4 @@ export const EnergyGraphic = ({ data }: Props) => {
   );
 };
 
-export default EnergyGraphic;
+export default EnergyChart;

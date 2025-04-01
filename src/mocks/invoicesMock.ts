@@ -1,0 +1,80 @@
+export const invoicesMock = [
+  {
+    id: '3001116735-01-2024',
+    clientNumber: '3001116735',
+    month: 'Jan/24',
+    pdfUrl: '/pdfs/3001116735-01-2024.pdf',
+  },
+  {
+    id: '3001116735-02-2024',
+    clientNumber: '3001116735',
+    month: 'Fev/24',
+    pdfUrl: '/pdfs/3001116735-02-2024.pdf',
+  },
+  {
+    id: '3001116735-03-2024',
+    clientNumber: '3001116735',
+    month: 'Mar/24',
+    pdfUrl: '/pdfs/3001116735-03-2024.pdf',
+  },
+  {
+    id: '3001116735-04-2024',
+    clientNumber: '3001116735',
+    month: 'Abr/24',
+    pdfUrl: '/pdfs/3001116735-04-2024.pdf',
+  },
+  {
+    id: '3001422762-01-2024',
+    clientNumber: '3001422762',
+    month: 'Jan/24',
+    pdfUrl: '/pdfs/3001422762-01-2024.pdf',
+  },
+  {
+    id: '3001422762-02-2024',
+    clientNumber: '3001422762',
+    month: 'Fev/24',
+    pdfUrl: '/pdfs/3001422762-02-2024.pdf',
+  },
+  {
+    id: '3001422762-03-2024',
+    clientNumber: '3001422762',
+    month: 'Mar/24',
+    pdfUrl: '/pdfs/3001422762-03-2024.pdf',
+  },
+  {
+    id: '3001422762-04-2024',
+    clientNumber: '3001422762',
+    month: 'Abr/24',
+    pdfUrl: '/pdfs/3001422762-04-2024.pdf',
+  },
+  {
+    id: '3001422762-05-2024',
+    clientNumber: '3001422762',
+    month: 'Mai/24',
+    pdfUrl: '/pdfs/3001422762-05-2024.pdf',
+  },
+  {
+    id: '3001422762-06-2024',
+    clientNumber: '3001422762',
+    month: 'Jun/24',
+    pdfUrl: '/pdfs/3001422762-06-2024.pdf',
+  },
+  {
+    id: '3001422762-07-2024',
+    clientNumber: '3001422762',
+    month: 'Jul/24',
+    pdfUrl: '/pdfs/3001422762-07-2024.pdf',
+  },
+  {
+    id: '3001422762-08-2024',
+    clientNumber: '3001422762',
+    month: 'Ago/24',
+    pdfUrl: '/pdfs/3001422762-08-2024.pdf',
+  },
+  {
+    id: '3001422762-09-2024',
+    clientNumber: '3001422762',
+    month: 'Set/24',
+    pdfUrl: '/pdfs/3001422762-09-2024.pdf',
+  },
+];

@@ -4,9 +4,11 @@ import EnergyChart from './components/EnergyChart'
 import SummaryCard from './components/SummaryCard'
 import { dashboardMocks } from './mocks/dashboardMocks'
 import FinancialChart from './components/FinancialChart'
+import { NavLink } from 'react-router'
 
 function App() {
   const [summary, setSummary] = useState<typeof dashboardMocks | null>(null);
+
 
   useEffect(() => {
     console.log('Mock:', dashboardMocks)
@@ -15,7 +17,7 @@ function App() {
   }, [])
   if (!summary) return <p>Carregando...</p>
   return (
-    <div>
+    <>
       <h1>Dashboard</h1>
 
       <div style={{ display: 'flex', flexWrap: 'wrap', gap: '16px' }}>
@@ -27,7 +29,10 @@ function App() {
 
       <EnergyChart data={summary.graficoEnergia} />
       <FinancialChart data={summary.graficoFinanceiro} />
-    </div>
+      <div>
+        <NavLink to='/clients'>as</NavLink><button>Visualizar todos os usuários</button>
+      </div>
+    </>
   )
 }
 

@@ -1,40 +1,45 @@
-import { useState, useEffect } from 'react'
-import './App.css'
+import { useEffect, useState } from 'react'
 import EnergyChart from './components/EnergyChart'
 import SummaryCard from './components/SummaryCard'
-import { dashboardMocks } from './mocks/dashboardMocks'
 import FinancialChart from './components/FinancialChart'
+import { getDashboardStatistics, DashboardStatistics } from './services/dashboardStatistics'
 import { NavLink } from 'react-router'
+import './App.css'
 
 function App() {
-  const [summary, setSummary] = useState<typeof dashboardMocks | null>(null);
-
+  const [stats, setStats] = useState<DashboardStatistics | null>(null)
 
   useEffect(() => {
-    const timeout = setTimeout(() => setSummary(dashboardMocks), 500)
-    return () => clearTimeout(timeout);
+    getDashboardStatistics()
+      .then((result: DashboardStatistics) => {
+        console.log(result)
+        setStats(result)
+      })
+      .catch((error) => {
+        console.error('Error fetching dashboard statistics:', error)
+      })
   }, [])
-  if (!summary) return <p>Carregando...</p>
+
+  if (!stats) return <p>Loading...</p>
+
   return (
     <>
       <h1>Dashboard</h1>
 
       <div style={{ display: 'flex', flexWrap: 'wrap', gap: '16px' }}>
-        <SummaryCard label='Consumo de Energia (kWh)' value={summary.totalEnergia} suffix=' kWh' />
-        <SummaryCard label='Energia Compensada (kWh)' value={summary.energiaCompensada} suffix=' kWh' />
-        <SummaryCard label='Valor Total sem GD' value={summary.valorSemGD} suffix=' R$' />
-        <SummaryCard label='Economia GD' value={summary.economiaGD} suffix=' R$' />
+        <SummaryCard label='Energia Total' value={stats.totalEnergy} suffix=' kWh' />
+        <SummaryCard label='Energia compensada' value={stats.compensatedEnergy} suffix=' kWh' />
+        <SummaryCard label='Total sem DG' value={stats.totalWithoutDG} suffix=' R$' />
+        <SummaryCard label='economizado (DG)' value={stats.dgSavings} suffix=' R$' />
       </div>
-
-      <EnergyChart data={summary.graficoEnergia} />
-      <FinancialChart data={summary.graficoFinanceiro} />
+      <EnergyChart data={stats.energyChartData} />
+      <FinancialChart data={stats.financialChartData} />
       <NavLink
         to='/clients'
         className='block rounded bg-violet-600 text-white p-2 w-full'
       >
-        Visualizar todos os clientes
+        View All Clients
       </NavLink>
-
     </>
   )
 }

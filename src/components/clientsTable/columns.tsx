@@ -9,6 +9,7 @@ import {
   DropdownMenuTrigger,
 } from '../ui/dropdown-menu'
 import { MoreHorizontal } from 'lucide-react'
+import { downloadPDF, viewPDF } from '@/services/download-bills'
 
 export type Payment = {
   id: number | string
@@ -51,12 +52,12 @@ export const columns: ColumnDef<Payment>[] = [
       return (
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <Button variant="ghost" className="h-8 w-8 p-0">
-              <span className="sr-only">Open menu</span>
+            <Button variant='ghost' className='h-8 w-8 p-0 text-white'>
+              <span className='sr-only'>Open menu</span>
               <MoreHorizontal />
             </Button>
           </DropdownMenuTrigger>
-          <DropdownMenuContent align="end">
+          <DropdownMenuContent align='end'>
             <DropdownMenuLabel>Ações</DropdownMenuLabel>
             <DropdownMenuSeparator />
             <DropdownMenuItem
@@ -64,8 +65,14 @@ export const columns: ColumnDef<Payment>[] = [
             >
               Copiar código de barras
             </DropdownMenuItem>
-            <DropdownMenuItem>Visualizar PDF</DropdownMenuItem>
-            <DropdownMenuItem>Fazer Download do PDF</DropdownMenuItem>
+            <DropdownMenuItem
+              onClick={() => viewPDF(Number(payment.id))}
+            >Visualizar PDF</DropdownMenuItem>
+            <DropdownMenuItem
+              onClick={() => downloadPDF(Number(payment.id))}
+            >
+              Fazer Download do PDF
+            </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
       )

@@ -10,24 +10,24 @@ import {
 
 type Props = {
   data: {
-    mes: string;
-    consumo: number;
-    compensada: number;
+    month: string;
+    consumption: number;
+    compensated: number;
   }[];
 };
 
 export const EnergyChart = ({ data }: Props) => {
   return (
     <div style={{ marginTop: 32 }}>
-      <h2>Resultados de Energia (kWh)</h2>
-      <ResponsiveContainer width="100%" height={300}>
+      <h2>Energy Results (kWh)</h2>
+      <ResponsiveContainer width='100%' height={300}>
         <BarChart data={data}>
-          <XAxis dataKey="mes" />
+          <XAxis dataKey='month' />
           <YAxis />
           <Tooltip formatter={(value: number) => `${value} kWh`} />
           <Legend />
-          <Bar dataKey="consumo" name="Consumo" fill="#8884d8" />
-          <Bar dataKey="compensada" name="Compensada" fill="#82ca9d" />
+          <Bar dataKey='consumption' name='Consumption' fill='#8884d8' />
+          <Bar dataKey='compensated' name='Compensated' fill='#82ca9d' />
         </BarChart>
       </ResponsiveContainer>
     </div>

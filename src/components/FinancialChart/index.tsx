@@ -10,26 +10,26 @@ import {
 
 type Props = {
   data: {
-    mes: string;
-    valorSemGD: number;
-    economiaGD: number;
+    month: string;
+    totalWithoutDG: number;
+    dgSavings: number;
   }[];
 };
 
 export const FinancialChart = ({ data }: Props) => {
   return (
     <div style={{ marginTop: 32 }}>
-      <h2>Resultados Financeiros (R$)</h2>
+      <h2>Financial Results (R$)</h2>
       <ResponsiveContainer width='100%' height={300}>
         <BarChart data={data}>
-          <XAxis dataKey='mes' />
+          <XAxis dataKey='month' />
           <YAxis />
           <Tooltip formatter={(value: number) =>
-            value.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })
+            value.toLocaleString('en-US', { style: 'currency', currency: 'BRL' })
           } />
           <Legend />
-          <Bar dataKey='valorSemGD' name='Valor Sem GD' fill='#ffc658' />
-          <Bar dataKey='economiaGD' name='Economia GD' fill='#82ca9d' />
+          <Bar dataKey='totalWithoutDG' name='Total Without DG' fill='#ffc658' />
+          <Bar dataKey='dgSavings' name='DG Savings' fill='#82ca9d' />
         </BarChart>
       </ResponsiveContainer>
     </div>

@@ -11,7 +11,6 @@ function App() {
 
 
   useEffect(() => {
-    console.log('Mock:', dashboardMocks)
     const timeout = setTimeout(() => setSummary(dashboardMocks), 500)
     return () => clearTimeout(timeout);
   }, [])
@@ -29,9 +28,13 @@ function App() {
 
       <EnergyChart data={summary.graficoEnergia} />
       <FinancialChart data={summary.graficoFinanceiro} />
-      <div>
-        <NavLink to='/clients'>as</NavLink><button>Visualizar todos os usuários</button>
-      </div>
+      <NavLink
+        to='/clients'
+        className='block rounded bg-violet-600 text-white p-2 w-full'
+      >
+        Visualizar todos os clientes
+      </NavLink>
+
     </>
   )
 }

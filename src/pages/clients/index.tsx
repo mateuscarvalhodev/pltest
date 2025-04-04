@@ -1,25 +1,25 @@
-import { Payment, columns } from './columns'
-import { DataTable } from './data-table'
+import DemoPage from '@/components/clientsTable';
+import { Button } from '@/components/ui/button';
+import { ArrowLeft } from 'lucide-react'
+import { NavLink } from 'react-router';
 
-async function getData(): Promise<Payment[]> {
-  // Fetch data from your API here.
-  return [
-    {
-      id: "728ed52f",
-      amount: 100,
-      status: "pending",
-      email: "m@example.com",
-    },
-    // ...
-  ]
-}
 
-export default async function DemoPage() {
-  const data = await getData()
-
+export default function clientsPage() {
   return (
-    <div className="container mx-auto py-10">
-      <DataTable columns={columns} data={data} />
-    </div>
+    <>
+      <div className='m-2 flex items-center gap-2'>
+        <NavLink
+          to='/'
+          className='bg-violet-600 p-2 rounded-xl flex items-center justify-center h-10'>
+          <ArrowLeft className='w-5 h-5 text-white' />
+        </NavLink>
+        <Button className='bg-red-300 text-white px-4 h-10 rounded-xl flex items-center'>
+          Adicionar cliente
+        </Button>
+      </div>
+      <div className='p-2'>
+        <DemoPage />
+      </div>
+    </>
   )
 }

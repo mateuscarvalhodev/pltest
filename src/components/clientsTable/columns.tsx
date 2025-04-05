@@ -61,11 +61,6 @@ export const columns: ColumnDef<Payment>[] = [
             <DropdownMenuLabel>Ações</DropdownMenuLabel>
             <DropdownMenuSeparator />
             <DropdownMenuItem
-              onClick={() => navigator.clipboard.writeText(String(payment.id))}
-            >
-              Copiar código de barras
-            </DropdownMenuItem>
-            <DropdownMenuItem
               onClick={() => viewPDF(Number(payment.id))}
             >Visualizar PDF</DropdownMenuItem>
             <DropdownMenuItem

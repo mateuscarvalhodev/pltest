@@ -1,13 +1,13 @@
-import api from './invoicesService'
+import api from './invoicesService';
 
-export async function uploadEnergyBill(file: File): Promise<any> {
-  const formData = new FormData()
-  formData.append('file', file)
+export async function uploadEnergyBill(file: File): Promise<unknown> {
+  const formData = new FormData();
+  formData.append('file', file);
 
   const response = await api.post('/energy-bills/upload', formData, {
     headers: {
-      'Content-Type': 'multipart/form-data'
-    }
-  })
-  return response.data
+      'Content-Type': 'multipart/form-data',
+    },
+  });
+  return response.data;
 }

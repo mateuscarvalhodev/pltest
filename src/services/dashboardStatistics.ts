@@ -49,17 +49,17 @@ export async function getDashboardStatistics(): Promise<DashboardStatistics> {
 
   const monthMap: Record<string, string> = {
     jan: 'Jan',
-    fev: 'Feb',
+    fev: 'Fev',
     mar: 'Mar',
-    abr: 'Apr',
-    mai: 'May',
+    abr: 'Abr',
+    mai: 'Mai',
     jun: 'Jun',
     jul: 'Jul',
-    ago: 'Aug',
-    set: 'Sep',
-    out: 'Oct',
+    ago: 'Ago',
+    set: 'Set',
+    out: 'Out',
     nov: 'Nov',
-    dez: 'Dec',
+    dez: 'Dez',
   };
 
   for (const key in rawData) {

@@ -28,8 +28,8 @@ export const FinancialChart = ({ data }: Props) => {
             value.toLocaleString('en-US', { style: 'currency', currency: 'BRL' })
           } />
           <Legend />
-          <Bar dataKey='totalWithoutDG' name='Total Without DG' fill='#ffc658' />
-          <Bar dataKey='dgSavings' name='DG Savings' fill='#82ca9d' />
+          <Bar dataKey='totalWithoutDG' name='Total sem DG' fill='#ffc658' />
+          <Bar dataKey='dgSavings' name='Economia DG' fill='#82ca9d' />
         </BarChart>
       </ResponsiveContainer>
     </div>

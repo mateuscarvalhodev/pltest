@@ -38,7 +38,7 @@ function App() {
         to='/clients'
         className='block rounded bg-violet-600 text-white p-2 w-full'
       >
-        View All Clients
+        Ver todos os clientes
       </NavLink>
     </>
   )
